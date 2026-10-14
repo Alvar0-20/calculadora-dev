@@ -28,20 +28,19 @@
             <!-- Visor -->
             <input type="text" id="display" disabled>
 
-            <!-- Teclado Científico -->
-            <div class="scientific-keys hidden" id="scientific-keys">
-                <button class="btn scientific" onclick="appendFunction('Math.sqrt(')">&radic;</button>
-                <button class="btn scientific" onclick="appendFunction('Math.pow(')">x&sup2;</button>
-                <button class="btn scientific" onclick="appendFunction('Math.sin(')">sin</button>
-                <button class="btn scientific" onclick="appendFunction('Math.cos(')">cos</button>
-                <button class="btn scientific" onclick="appendFunction('Math.tan(')">tan</button>
-                <button class="btn scientific" onclick="appendFunction('Math.PI')">&pi;</button>
-            </div>
-
+           <!-- Teclado Científico  -->
+    <div class="scientific-keys hidden" id="scientific-keys">
+        <button class="btn scientific" onclick="calculateSquareRoot()">&radic;</button>
+        <button class="btn scientific" onclick="calculateSquare()">x&sup2;</button>
+        <button class="btn scientific" onclick="calculateSin()">sin</button>
+        <button class="btn scientific" onclick="calculateCos()">cos</button>
+        <button class="btn scientific" onclick="calculateTan()">tan</button>
+        <button class="btn scientific" onclick="insertPi()">&pi;</button>
+    </div>
             <!-- Teclado Normal -->
             <div class="keys">
                 <button class="btn operator" onclick="clearDisplay()">C</button>
-                <button class="btn operator" onclick="appendToDisplay('')">&larr;</button>
+                <button class="btn operator" onclick="deleteLast()">&larr;</button>
                 <button class="btn operator" onclick="appendToDisplay('/')">/</button>
                 <button class="btn operator" onclick="appendToDisplay('*')">*</button>
 
@@ -80,6 +79,11 @@
             </ul>
         </aside>
     </div>
+
+    <!-- Rodapé com os créditos -->
+    <footer class="footer-credits">
+        <p>Desenvolvido com 💻 por <strong>Álvaro</strong></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -20,6 +20,61 @@ function div(value = MyNumber, value2 = MyNumber2) {
     return value / value2;
 }
 
+// Raiz Quadrada
+function calculateSquareRoot() {
+    try {
+        let result = eval(display.value);
+        display.value = Math.sqrt(result);
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+// Elevar ao Quadrado (x²)
+function calculateSquare() {
+    try {
+        let result = eval(display.value);
+        display.value = Math.pow(result, 2);
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+// Seno
+function calculateSin() {
+    try {
+        let result = eval(display.value);
+        display.value = Math.sin(result * Math.PI / 180);
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+// Cosseno
+function calculateCos() {
+    try {
+        let result = eval(display.value);
+        display.value = Math.cos(result * Math.PI / 180);
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+// Tangente
+function calculateTan() {
+    try {
+        let result = eval(display.value);
+        display.value = Math.tan(result * Math.PI / 180);
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+// Inserir PI
+function insertPi() {
+    display.value += Math.PI;
+}
+
 function calculate() {
     try {
         display.value = eval(display.value);
@@ -32,23 +87,20 @@ function calculate() {
 window.addEventListener('keydown', (event) => {
     const key = event.key;
 
-    // Se for número ou operador válido, adiciona ao visor
     if (/^[0-9+\-*/.]$/.test(key)) {
         appendToDisplay(key);
     } 
-    // Se apertar Enter ou '=', calcula o resultado
     else if (key === 'Enter' || key === '=') {
         calculate();
     } 
-    // Se apertar Backspace, apaga o último caractere
     else if (key === 'Backspace') {
         display.value = display.value.slice(0, -1);
     } 
-    // Se apertar Escape (Esc), limpa tudo
     else if (key === 'Escape') {
         clearDisplay();
     }
 });
+
 // Função para alternar entre modo básico e científico
 function toggleScientificMode() {
     const scientificKeys = document.getElementById('scientific-keys');
@@ -62,8 +114,7 @@ function toggleScientificMode() {
         toggleBtn.textContent = "Básico";
     }
 }
-
-// Função para injetar funções matemáticas no visor
-function appendFunction(func) {
-    display.value += func;
+// Apaga o último caractere do visor
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
 }

@@ -184,6 +184,19 @@ body {
     color: #cccccc;
 }
 
+/* Estilo para o rodapé e créditos */
+.footer-credits {
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.footer-credits strong {
+    color: #ff9500; /* Destaca o teu nome com a cor dos operadores da calculadora */
+}
+
 /* --- ADAPTAÇÃO PARA CELULAR E TELAS MENORES (Responsividade) --- */
 
 @media (max-width: 900px) {
