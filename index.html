@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Dev</title>
+</head>
+    <h1 class="title">Calculadora Dev</h1>
+
+    <!-- Container principal que organiza os lados e o centro -->
+    <div class="main-container">
+        
+     <!-- Painel Lateral Esquerdo: Dicionário Dev -->
+        <aside class="side-panel">
+            <h3>📖 Dicionário Dev</h3>
+            <ul>
+                <li><strong>DOM:</strong> Document Object Model, a ponte entre o HTML e o JS.</li>
+                <li><strong>Eval:</strong> Função que avalia strings como código JS.</li>
+                <li><strong>Grid:</strong> Layout CSS bidimensional para organizar elementos.</li>
+                <li><strong>Event Listener:</strong> Escutador de eventos para cliques e teclas.</li>
+                <li><strong>Const / Let:</strong> Declaração moderna de variáveis no JS.</li>
+            </ul>
+        </aside>
+
+        <!-- A Calculadora no Centro -->
+        <div class="calculator">
+            <!-- Visor -->
+            <input type="text" id="display" disabled>
+
+            <!-- Teclado Científico -->
+            <div class="scientific-keys hidden" id="scientific-keys">
+                <button class="btn scientific" onclick="appendFunction('Math.sqrt(')">&radic;</button>
+                <button class="btn scientific" onclick="appendFunction('Math.pow(')">x&sup2;</button>
+                <button class="btn scientific" onclick="appendFunction('Math.sin(')">sin</button>
+                <button class="btn scientific" onclick="appendFunction('Math.cos(')">cos</button>
+                <button class="btn scientific" onclick="appendFunction('Math.tan(')">tan</button>
+                <button class="btn scientific" onclick="appendFunction('Math.PI')">&pi;</button>
+            </div>
+
+            <!-- Teclado Normal -->
+            <div class="keys">
+                <button class="btn operator" onclick="clearDisplay()">C</button>
+                <button class="btn operator" onclick="appendToDisplay('')">&larr;</button>
+                <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+                <button class="btn operator" onclick="appendToDisplay('*')">*</button>
+
+                <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+
+                <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+
+                <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+
+                <button class="btn number zero" onclick="appendToDisplay('0')">0</button>
+                <button class="btn number" onclick="appendToDisplay('.')">.</button>
+            </div>
+
+            <!-- Botão de Modo Científico -->
+            <button id="toggle-mode" class="btn mode-btn" onclick="toggleScientificMode()">Científico</button>
+        </div>
+
+    <!-- Painel Lateral Direito: Fórmulas (Com símbolos limpos) -->
+        <aside class="side-panel">
+            <h3>📐 Fórmulas Úteis</h3>
+            <ul>
+                <li><strong>Área do Círculo:</strong> &pi; &times; r&sup2;</li>
+                <li><strong>Teorema de Pitágoras:</strong> a&sup2; + b&sup2; = c&sup2;</li>
+                <li><strong>Velocidade Média:</strong> &Delta;S / &Delta;T</li>
+                <li><strong>Bhaskara:</strong> x = -&beta; &plusmn; &radic;&Delta; / 2&alpha;</li>
+                <li><strong>Teorema de Tales:</strong> Razão de semelhança</li>
+            </ul>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
